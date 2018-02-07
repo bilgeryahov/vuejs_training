@@ -15,15 +15,6 @@
 				title: 'Generate Your Team'
 			}
 		},
-		methods: {
-			fetchCharacter() {
-				fetch('https://swapi.co/api/people/1/', {
-					method: 'GET'
-				})
-				.then(res => res.json())
-				.then(data => console.log(data));
-			}
-		},
 		components: {
 			Character
 		}
