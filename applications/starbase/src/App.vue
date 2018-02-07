@@ -8,7 +8,6 @@
 				:key="index"
 			/>
 		</div>
-		x
 	</div>
 </template>
 
