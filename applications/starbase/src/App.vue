@@ -1,11 +1,13 @@
 <template>
 	<div id="app">
 		<h3>{{ title }}</h3>
-		<button class="btn btn-primary" @click="fetchCharacter">Test Fetch Character</button>
+		<Character />
 	</div>
 </template>
 
 <script>
+	import Character from './components/Character';
+
 	export default {
 		name: 'app',
 		data() {
@@ -21,6 +23,9 @@
 				.then(res => res.json())
 				.then(data => console.log(data));
 			}
+		},
+		components: {
+			Character
 		}
 	}
 </script>
