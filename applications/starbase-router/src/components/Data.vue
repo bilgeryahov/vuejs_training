@@ -1,10 +1,16 @@
 <template>
-	<div class="">
-		Type: {{ items }}
+	<div class="row">
+		<Item
+			v-for="(item, index) in items"
+			:key="index"
+			:item="item"
+		/>
 	</div>
 </template>
 
 <script>
+	import Item from './Item';
+
 	export default {
 		data() {
 			return {
@@ -33,6 +39,9 @@
 		},
 		created() {
 			this.fetchItems();
+		},
+		components: {
+			Item
 		}
 	}
 </script>
