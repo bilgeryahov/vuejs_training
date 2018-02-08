@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard';
 import SignIn from './components/SignIn';
 
 import { firebaseApp } from "./firebaseApp";
+import store from './store';
 
 Vue.use(VueRouter);
 
@@ -28,5 +29,6 @@ firebaseApp.auth().onAuthStateChanged(user => {
 new Vue({
 	el: '#app',
 	router,
+	store,
 	render: h => h(App)
 });
