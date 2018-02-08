@@ -14,17 +14,35 @@
 				class="form-control"
 				v-model="password"
 			/>
-			<button class="btn btn-primary">Sign In</button>
+			<button class="btn btn-primary" @click="signIn">Sign In</button>
 		</div>
+		<br />
+		<p>{{ error.message }}</p>
+		<br />
 	</div>
 </template>
 
 <script>
+	import { firebaseApp } from '../firebaseApp';
+
 	export default {
 		data() {
 			return {
 				email: '',
-				password: ''
+				password: '',
+				error: {
+					message: ''
+				}
+			}
+		},
+		methods: {
+			signIn() {
+				firebaseApp
+				.auth()
+				.signInWithEmailAndPassword(this.email, this.password)
+				.catch(error => {
+					this.error = error;
+				})
 			}
 		}
 	}
