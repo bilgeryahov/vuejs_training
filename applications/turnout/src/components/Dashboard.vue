@@ -11,15 +11,21 @@
 		<hr />
 			<AddEvent />
 		<hr />
-		{{ $store.state.events }}
-
+		<div class="row">
+			<EventItem
+				v-for="(event_item, index) in this.$store.state.events"
+				:event="event_item"
+				:key="index"
+			/>
+		</div>
 	</div>
 </template>
 
 <script>
 	import { firebaseApp, eventsRef } from '../firebaseApp';
 
-	import  AddEvent  from './AddEvent';
+	import AddEvent  from './AddEvent';
+	import EventItem from './EventItem';
 
 	export default {
 		methods: {
@@ -30,7 +36,8 @@
 			}
 		},
 		components: {
-			AddEvent
+			AddEvent,
+			EventItem
 		},
 		mounted() {
 			eventsRef
