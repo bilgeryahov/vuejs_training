@@ -23,6 +23,7 @@ firebaseApp.auth().onAuthStateChanged(user => {
 		store.dispatch('signIn', user);
 		router.push('/dashboard');
 	} else {
+		store.dispatch('signOut');
 		router.replace('/signin');
 	}
 });
