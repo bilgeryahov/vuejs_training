@@ -8,12 +8,18 @@
 		>
 			Sign Out
 		</button>
+		<hr />
+			<AddEvent />
+		<hr />
 		{{ $store.state }}
+
 	</div>
 </template>
 
 <script>
 	import { firebaseApp } from '../firebaseApp';
+
+	import  AddEvent  from './AddEvent';
 
 	export default {
 		methods: {
@@ -22,6 +28,9 @@
 				.auth()
 				.signOut();
 			}
+		},
+		components: {
+			AddEvent
 		}
 	}
 </script>
