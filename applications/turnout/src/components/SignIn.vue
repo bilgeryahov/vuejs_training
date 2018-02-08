@@ -42,7 +42,7 @@
 				.signInWithEmailAndPassword(this.email, this.password)
 				.catch(error => {
 					this.error = error;
-				})
+				});
 			}
 		}
 	}
