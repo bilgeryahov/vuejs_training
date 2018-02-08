@@ -26,8 +26,7 @@ firebaseApp.auth().onAuthStateChanged(user => {
 		router.push('/dashboard');
 	} else {
 		store.dispatch('signOut');
-		//router.replace('/signin'); TODO: Fix
-
+		router.replace('/signin');
 	}
 });
 
