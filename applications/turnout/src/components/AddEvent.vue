@@ -1,7 +1,10 @@
 <template>
 	<div class="">
-		<h4>Add an event</h4>
-		<div class="form">
+		<h4>
+			Add an event
+			<input type="checkbox" v-model="showForm"/>
+		</h4>
+		<div class="form" v-if="showForm">
 			<div class="form-group">
 				<label>Title</label>
 				<input type="text" class="form-control" v-model="event.title" />
@@ -35,7 +38,8 @@
 					date: '',
 					location: '',
 					email: ''
-				}
+				},
+				showForm: false
 			}
 		},
 		methods:{
