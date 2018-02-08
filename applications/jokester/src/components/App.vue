@@ -2,6 +2,7 @@
 	<div id="app">
 		<h3>Got jokes?</h3>
 		<button class="btn btn-primary" @click="initJokes">Get Ten Random Jokes</button>
+		<button class="btn btn-primary" @click="addJoke">Get A Random Joke</button>
 		<br />
 		<br />
 		<div class="row">
@@ -21,7 +22,8 @@
 
 	export default {
 		methods: mapActions([
-			'initJokes'
+			'initJokes',
+			'addJoke'
 		]),
 		components: {
 			Joke
